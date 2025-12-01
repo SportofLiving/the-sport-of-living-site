@@ -1,0 +1,68 @@
+===========================================
+BEFORE/AFTER COMPARISON - Key Changes
+===========================================
+
+1. PAGE 1 (index.html) - BOX 1.2
+-------------------------------------------
+BEFORE:
+  <h3>Form 1 — Please, fill in:</h3>
+  <ul>
+    <li>Email</li>
+    <li>Name</li>
+    <li>Country</li>
+    ... (13 questions total)
+  </ul>
+  <br>
+  <iframe src="...?embedded=true">...</iframe>
+  <p class="consent-text">By submitting...</p>
+
+AFTER:
+  <iframe src="...?embedded=true&hl=en">...</iframe>
+  <p class="consent-text">By submitting...</p>
+
+RESULT: ✅ Cleaner, no redundancy, English UI enforced
+-------------------------------------------
+
+2. PAGE 3 (page3.html) - BOX 3.1
+-------------------------------------------
+BEFORE:
+  <h3>May I ask a few more questions...</h3>
+  <h3>Form 2 - Please, fill in:</h3>
+  <ul>
+    <li>Email</li>
+    <li>Name</li>
+    ... (13 questions total)
+  </ul>
+  <br>
+  <iframe src="...?embedded=true">...</iframe>
+
+AFTER:
+  <h3>May I ask a few more questions...</h3>
+  <iframe src="...?embedded=true&hl=en">...</iframe>
+
+RESULT: ✅ Kept intro question, removed redundancy, English UI enforced
+-------------------------------------------
+
+3. PAGE 2 (page2.html) - BOX 2.1
+-------------------------------------------
+BEFORE:
+  <p class="button-label">Pay $6.99 — processed by PayPal.</p>
+
+AFTER:
+  <p class="button-label">Secure payment processed by PayPal.</p>
+
+RESULT: ✅ No price redundancy
+-------------------------------------------
+
+4. PAGE 3a & PAGE 6 - PayPal SDK Script
+-------------------------------------------
+BEFORE:
+  <script src="https://www.paypal.com/sdk/js?client-id=...&vault=true&intent=subscription"></script>
+
+AFTER:
+  <script src="https://www.paypal.com/sdk/js?client-id=...&vault=true&intent=subscription&locale=en_US"></script>
+
+RESULT: ✅ PayPal buttons now render correctly, English UI enforced
+-------------------------------------------
+
+All changes are FUNCTIONAL ONLY - no routing, server logic, or visual layout changes made.

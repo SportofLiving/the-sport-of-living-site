@@ -1,0 +1,110 @@
+=============================================================================
+BEFORE/AFTER VISUAL CHANGES - The Sport of Living
+=============================================================================
+
+GLOBAL CHANGES (ALL 7 PAGES)
+-----------------------------------------------------------------------------
+
+HEADER:
+  BEFORE: White background, 40px padding, dark text
+  AFTER:  Black background, 10px padding, light grey-violet text
+  
+FOOTER:
+  BEFORE: White background, 40px padding, dark/blue text
+  AFTER:  Black background, 10px padding, light grey-violet text
+  
+SUBHEADER:
+  BEFORE: 22px font, no top margin
+  AFTER:  20px font, 12px top margin (more space from header)
+  
+DISCLAIMER:
+  BEFORE: Light gold background (#fff9e6)
+  AFTER:  Grey-violet background (#e8e2f3) - matches content boxes
+
+-----------------------------------------------------------------------------
+
+PAGE 1 (index.html) - LANDING PAGE
+-----------------------------------------------------------------------------
+
+PHOTO 3 + PARAGRAPH 1.3:
+  BEFORE: Side-by-side layout (two columns)
+  AFTER:  Vertical stack - Photo on top (centered), text below (centered)
+  
+PHOTO 3 WIDTH:
+  BEFORE: Standard centered-image width
+  AFTER:  165mm/650px (wider, more prominent)
+  
+PHOTO 4 WIDTH:
+  BEFORE: Standard centered-image width
+  AFTER:  165mm/650px (matches Photo 3 for visual consistency)
+
+-----------------------------------------------------------------------------
+
+PAGE 3a (page3a.html) - PLAN SELECTION
+-----------------------------------------------------------------------------
+
+VIP PLAN BOX - TITLE ROW:
+  BEFORE: "VIP Plan" and "Best value" stacked vertically
+  AFTER:  "VIP Plan" (left) and "Best value" (right) on same horizontal line
+  
+VIP PRICING TEXT:
+  BEFORE: Light gold (#ffc439) - low contrast, hard to read
+  AFTER:  Dark gold (#b8860b) - high contrast, easy to read
+  Text: "$39.98 → $32.99 (deducting your Basic Plan)"
+
+-----------------------------------------------------------------------------
+
+PAGE 4 (page4.html) - POP PLAN WELCOME
+-----------------------------------------------------------------------------
+
+VIP INVITATION TEXT:
+  BEFORE: Black text
+  AFTER:  Dark gold (#b8860b)
+  Text: "Prefer VIP support? See the premium option:"
+
+-----------------------------------------------------------------------------
+
+PAGE 5 (page5.html) - VIP WELCOME
+-----------------------------------------------------------------------------
+
+PHOTO 9:
+  BEFORE: No border
+  AFTER:  Thin golden border (2px solid #ffc439)
+  
+VIP TEXT:
+  BEFORE: Light gold (#ffc439) - low contrast
+  AFTER:  Dark gold (#b8860b) - high contrast
+  Texts: "Your VIP journey begins now."
+         "Thank you for choosing Premium Excellence."
+
+-----------------------------------------------------------------------------
+
+PAGE 6 (page6.html) - VIP UPGRADE
+-----------------------------------------------------------------------------
+
+LAYOUT:
+  BEFORE: Vertical stack - Photo 10 on top, Box 6.1 below
+  AFTER:  Two columns - Photo 10 left (45%), Box 6.1 right (55%)
+  
+VIP TEXT:
+  BEFORE: Light gold - low contrast
+  AFTER:  Dark gold (#b8860b) - high contrast
+  Texts: "The monthly difference from the POP to the VIP plan is $20"
+         "Choose Premium Excellence!"
+
+=============================================================================
+
+COLOR PALETTE REFERENCE:
+  Light Grey-Violet (header/footer text):  #f0ebf8
+  Grey-Violet (content boxes):             #e8e2f3
+  Light Gold (borders, badges):            #ffc439
+  Dark Gold (VIP text, high contrast):     #b8860b
+  Black (header/footer background):        #000
+
+=============================================================================
+
+STATUS: All changes applied successfully. Server running on port 3000.
+        All 7 pages verified with HTTP 200 status.
+        Ready for preview and user review.
+
+=============================================================================

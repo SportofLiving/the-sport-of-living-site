@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Selection - The Sport of Living</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>The Sport of Living</h1>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1 class="page-title">We received your information, thank you very much!</h1>
+    </div>
+
+    <!-- Photo 7 Centered -->
+    <img src="assets/photos/photo-7.jpg" alt="Carlos at a sports park" class="centered-image">
+
+    <!-- Paragraph 3a.1 -->
+    <div class="text-center">
+      <p>Now, to move forward together,<br>
+I propose a pleasant way to feel better, look better.<br>
+Gentle steps to reach your full potential.</p>
+    </div>
+
+    <!-- Pricing Boxes: POP and VIP -->
+    <div class="pricing-row">
+      <!-- Box 3a.1: POP Plan -->
+      <div class="pricing-box">
+        <h3>Personal Optimization Plan (POP)</h3>
+        <p class="price">$19.98 → $12.99 (deducting your Basic Plan)</p>
+        <ul>
+          <li>Exercise plan based on your current state</li>
+          <li>Gradual personalized nutrition guidance</li>
+          <li>Sleep optimization and daily rhythm</li>
+          <li>Step-by-step coaching toward your goals</li>
+          <li>Monthly updates</li>
+        </ul>
+        <div class="paypal-container">
+          <p class="button-label">I accept the POP plan.</p>
+          <div id="paypal-button-container-P-74A73468Y0022730JNEHWXIY"></div>
+        </div>
+      </div>
+
+      <!-- Box 3a.2: VIP Plan -->
+      <div class="pricing-box vip">
+        <div class="vip-title-row">
+          <h3 style="margin-bottom: 0;">VIP Plan</h3>
+          <span class="best-value">Best value</span>
+        </div>
+        <p style="font-weight: 600; margin-bottom: 12px;">Is it within your reach? Don't miss it!</p>
+        <p class="price vip-dark-gold-text">$39.98 → $32.99 (deducting your Basic Plan)</p>
+        <ul>
+          <li>Everything included in POP +</li>
+          <li>Weekly personal consultations</li>
+          <li>Progress at your own pace</li>
+          <li>Direct attention from Carlos</li>
+          <li>Exclusive weekly VIP newsletter</li>
+          <li>Premium videos and content</li>
+        </ul>
+        <div class="paypal-container">
+          <p class="button-label">I accept the VIP plan</p>
+          <div id="paypal-button-container-P-8D491570ED588515TNEHXEBQ"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo 8 -->
+    <img src="assets/photos/photo-8.jpg" alt="Woman preparing healthy food in a kitchen" class="centered-image">
+
+    <!-- Closing Statement -->
+    <div class="closing-statement">
+      <p>Your best years can still be ahead.</p>
+    </div>
+
+    <!-- Note -->
+    <div class="small-note">
+      <p><strong>Note:</strong> Your contribution supports the production of The Sport of Living series.</p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Important notice:</strong> If you have any signs of health problems, we recommend consulting your doctor. The Sport of Living is aimed at improving lifestyle, it is in no way intended to replace medical service.
+    </div>
+  </main>
+
+  <footer>
+    <p>The Sport of Living by Carlos Martinez • 
+      <a href="privacy-policy.html">Privacy Policy</a> • 
+      <a href="terms-of-service.html">Terms of Service</a> • 
+      © 2025 All rights reserved.</p>
+    <p>Address: 8721 Santa Monica Boulevard, Los Angeles, CA 90069.</p>
+  </footer>
+
+  <!-- PayPal SDK and Button Scripts -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AUYvaDsmN4EW8Wd-mBXeFZpNuAt-YOlTTB1HBTUGKQY_892JV_Pu7mYCDYtLiHYK01LtADYrNFA_hE&vault=true&intent=subscription&locale=en_US"
+          data-sdk-integration-source="button-factory"></script>
+  <script>
+    // POP Subscription Button
+    paypal.Buttons({
+      style: {
+        shape: 'rect',
+        color: 'blue',
+        layout: 'vertical',
+        label: 'paypal'
+      },
+      createSubscription: function (data, actions) {
+        return actions.subscription.create({
+          plan_id: 'P-74A73468Y0022730JNEHWXIY'
+        });
+      },
+      onApprove: function (data, actions) {
+        window.location.href = 'https://www.thesportofliving.com/pop';
+      }
+    }).render('#paypal-button-container-P-74A73468Y0022730JNEHWXIY');
+
+    // VIP Subscription Button
+    paypal.Buttons({
+      style: {
+        shape: 'rect',
+        color: 'gold',
+        layout: 'vertical',
+        label: 'paypal'
+      },
+      createSubscription: function (data, actions) {
+        return actions.subscription.create({
+          plan_id: 'P-8D491570ED588515TNEHXEBQ'
+        });
+      },
+      onApprove: function (data, actions) {
+        window.location.href = 'https://www.thesportofliving.com/premium';
+      }
+    }).render('#paypal-button-container-P-8D491570ED588515TNEHXEBQ');
+  </script>
+</body>
+</html>

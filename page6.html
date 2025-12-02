@@ -62,27 +62,37 @@
     <p>Address: 8721 Santa Monica Boulevard, Los Angeles, CA 90069.</p>
   </footer>
 
-  <!-- PayPal SDK and Button Script -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AUYvaDsmN4EW8Wd-mBXeFZpNuAt-YOlTTB1HBTUGKQY_892JV_Pu7mYCDYtLiHYK01LtADYrNFA_hE&vault=true&intent=subscription&locale=en_US"
-          data-sdk-integration-source="button-factory"></script>
+  <!-- PayPal SDK and VIP Upgrade Button -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AUYvaDsmN4EW8Wd-mBXeFZpNuAt-YOlTTB1HBTKTUGKQY_892JV_Pu7mYCDYtLiHYK01LtADYrNFA_hE&vault=true&intent=subscription"
+    data-sdk-integration-source="button-factory"></script>
   <script>
-    // VIP Upgrade Button
-    paypal.Buttons({
-      style: {
-        shape: 'rect',
-        color: 'gold',
-        layout: 'vertical',
-        label: 'paypal'
-      },
-      createSubscription: function (data, actions) {
-        return actions.subscription.create({
-          plan_id: 'P-4TY11014S4757831NNEMIPEA'
-        });
-      },
-      onApprove: function (data, actions) {
-        window.location.href = 'https://www.thesportofliving.com/premium';
+    function initPaypalVipUpgradeButton() {
+      // Si el SDK de PayPal aún no está listo, esperamos y reintentamos
+      if (!window.paypal || !paypal.Buttons) {
+        setTimeout(initPaypalVipUpgradeButton, 100);
+        return;
       }
-    }).render('#paypal-button-container-P-4TY11014S4757831NNEMIPEA');
+
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal'
+        },
+        createSubscription: function (data, actions) {
+          return actions.subscription.create({
+            plan_id: 'P-4TY11014S4757831NNEMIPEA'
+          });
+        },
+        onApprove: function (data, actions) {
+          window.location.href = 'https://www.thesportofliving.com/premium';
+        }
+      }).render('#paypal-button-container-P-4TY11014S4757831NNEMIPEA');
+    }
+
+    // Iniciamos el proceso en cuanto sea posible
+    initPaypalVipUpgradeButton();
   </script>
 </body>
 </html>

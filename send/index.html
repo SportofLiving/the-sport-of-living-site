@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sport of Living - Redirecting</title>
+  <!-- IMPORTANTE: desde /send/ hay que subir un nivel para llegar a assets -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>The Sport of Living</h1>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Redirecting…</h1>
+    </div>
+
+    <div class="text-center">
+      <p>You are being redirected to the next step in The Sport of Living.</p>
+      <p>
+        If nothing happens within a few seconds,&nbsp;
+        <a id="redirect-link" href="https://www.thesportofliving.com/page2.html">please click here</a>.
+      </p>
+      <p style="font-size: 0.9rem; color: #666;">
+        This ensures your browser or security settings do not block the automatic redirection.
+      </p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Important notice:</strong> If you have any signs of health problems, we recommend consulting your doctor.
+      The Sport of Living is aimed at improving lifestyle, it is in no way intended to replace medical service.
+    </div>
+  </main>
+
+  <footer>
+    <p>The Sport of Living by Carlos Martinez • 
+      <a href="../privacy-policy.html">Privacy Policy</a> • 
+      <a href="../terms-of-service.html">Terms of Service</a> • 
+      © 2025 All rights reserved.</p>
+    <p>Address: 8721 Santa Monica Boulevard, Los Angeles, CA 90069.</p>
+  </footer>
+
+  <script>
+    // After the page loads, read the link target and redirect there automatically
+    window.addEventListener('DOMContentLoaded', function () {
+      var link = document.getElementById('redirect-link');
+      if (!link) return;
+
+      // Automatic redirect after 5 seconds
+      setTimeout(function () {
+        window.location.href = link.href;
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

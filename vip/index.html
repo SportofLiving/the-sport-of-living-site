@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Sport of Living - Redirecting</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <title>Upgrade to VIP - The Sport of Living</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header>
@@ -12,21 +12,43 @@
   </header>
 
   <main class="container">
+    <!-- Hero Section -->
     <div class="hero">
-      <h1>Redirecting…</h1>
+      <h1 class="page-title">Welcome to VIP Status!</h1>
     </div>
 
-    <div class="text-center">
-      <p>You are being redirected to the full information about the VIP plan.</p>
-      <p>
-        If nothing happens within a few seconds,&nbsp;
-        <a id="redirect-link" href="https://www.thesportofliving.com/page6.html">please click here</a>.
-      </p>
-      <p style="font-size: 0.9rem; color: #666;">
-        This ensures your browser or security settings do not block the automatic redirection.
-      </p>
+    <!-- Two Column Layout: Photo 10 + Box 6.1 -->
+    <div class="two-column-layout">
+      <div class="col-left">
+        <img src="assets/photos/photo-10.jpg" alt="Carlos vertical portrait at a sports park" style="width: 100%; border-radius: 8px;">
+      </div>
+      <div class="col-right">
+        <!-- Box 6.1: VIP Upgrade Offer -->
+        <div class="content-box vip-box">
+          <h3 class="vip-dark-gold-text">The monthly difference from the POP to the VIP plan is $20</h3>
+      <p><strong>Benefits:</strong></p>
+      <ul>
+        <li>Everything included in POP +</li>
+        <li>Options for you to choose in each category.</li>
+        <li>Progress at your own pace.</li>
+        <li>Direct attention from Carlos.</li>
+        <li>The Premium Newsletter.</li>
+        <li>Videos and exclusive content.</li>
+      </ul>
+          <div class="paypal-container">
+            <p class="button-label">I accept the VIP plan.</p>
+            <div id="paypal-button-container-P-4TY11014S4757831NNEMIPEA"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Closing Statement -->
+    <div class="closing-statement">
+      <p class="vip-dark-gold-text">Choose Premium Excellence!</p>
+    </div>
+
+    <!-- Disclaimer -->
     <div class="disclaimer">
       <strong>Important notice:</strong> If you have any signs of health problems, we recommend consulting your doctor. The Sport of Living is aimed at improving lifestyle, it is in no way intended to replace medical service.
     </div>
@@ -34,21 +56,43 @@
 
   <footer>
     <p>The Sport of Living by Carlos Martinez • 
-      <a href="../privacy-policy.html">Privacy Policy</a> • 
-      <a href="../terms-of-service.html">Terms of Service</a> • 
+      <a href="privacy-policy.html">Privacy Policy</a> • 
+      <a href="terms-of-service.html">Terms of Service</a> • 
       © 2025 All rights reserved.</p>
     <p>Address: 8721 Santa Monica Boulevard, Los Angeles, CA 90069.</p>
   </footer>
 
+  <!-- PayPal SDK and VIP Upgrade Button -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AUYvaDsmN4EW8Wd-mBXeFZpNuAt-YOlTTB1HBTKTUGKQY_892JV_Pu7mYCDYtLiHYK01LtADYrNFA_hE&vault=true&intent=subscription"
+    data-sdk-integration-source="button-factory"></script>
   <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      var link = document.getElementById('redirect-link');
-      if (!link) return;
+    function initPaypalVipUpgradeButton() {
+      // Si el SDK de PayPal aún no está listo, esperamos y reintentamos
+      if (!window.paypal || !paypal.Buttons) {
+        setTimeout(initPaypalVipUpgradeButton, 100);
+        return;
+      }
 
-      setTimeout(function () {
-        window.location.href = link.href;
-      }, 5000);
-    });
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal'
+        },
+        createSubscription: function (data, actions) {
+          return actions.subscription.create({
+            plan_id: 'P-4TY11014S4757831NNEMIPEA'
+          });
+        },
+        onApprove: function (data, actions) {
+          window.location.href = 'https://www.thesportofliving.com/premium';
+        }
+      }).render('#paypal-button-container-P-4TY11014S4757831NNEMIPEA');
+    }
+
+    // Iniciamos el proceso en cuanto sea posible
+    initPaypalVipUpgradeButton();
   </script>
 </body>
 </html>
